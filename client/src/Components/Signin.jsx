@@ -7,8 +7,8 @@ const Signin = () => {
 
     const [Emaildata, setEmaildata] = useState([])
     const [Password, setPassword] = useState([])
-    const [SigninData, setSigninData] = useState([])
     const [handleHidden, sethandleHidden] = useState(false)
+    const [SigninData, setSigninData] = useState([""])
 
     const handleChange = (e) => {
         setEmaildata(e.target.value)
@@ -26,12 +26,7 @@ const Signin = () => {
     console.log(handleHidden)
 
     const hanldeSignin = () => {
-        setSigninData([
-            {
-                email: Emaildata,
-                password: Password
-            }
-        ])
+        setSigninData([...SigninData, {email:Emaildata, password:Password}])
     }
     console.log(SigninData)
 
